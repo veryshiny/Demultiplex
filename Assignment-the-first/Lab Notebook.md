@@ -78,7 +78,7 @@ ength}' | uniq
 
 ## looking for how a read looks when it has an actual index (B1	GTAGCGTA in this case)
 
-from an index file! R2
+from an index file! R2 which means that R2 is technically index 1 because the index sequence matches the list we were given
 ```
 zcat 1294_S1_L008_R2_001.fastq.gz |grep -A 2 -B 1 "GTAGCGTA" | head -4
 @K00337:83:HJKJNBBXX:8:1101:1438:1701 2:N:0:1
@@ -119,3 +119,4 @@ TGTGGCTTATTTTCTGCCTGTGGAAGAAACACTAAAGAAACGAAAGCGGGACCAAGAGGAAGAGATGGACTATGCACCAG
 AAA7AAFF<JJ<<FAFJJFJFAAAFJJFJJJJAFJJFJJJJFFJJFJFJFFJF<JJ<AFFJ<FAFJJJJJFJ7JJFFFJJJFJJJ7<F7JJJFF-AAFFAJ
 ^C
 ```
+
