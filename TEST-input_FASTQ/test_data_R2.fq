@@ -1,0 +1,16 @@
+@mapped_seq_1   2:N:0:1
+GTAGCGTA
++
+IIIIIIII
+@hopped_seq_1   2:N:0:1 
+CGATCGAT
++
+JJJJJJJJ
+@unk_seq_1   2:N:0:1 
+NGNGNGNG
++
+JJJJIIII
+@failed_thresh_seq_1   2:N:0:1 
+GTAGCGTA
++
+!!!!####
