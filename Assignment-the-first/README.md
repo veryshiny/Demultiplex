@@ -4,7 +4,7 @@
 
 De-multiplexing is necessary for downstream analyses.
 
-We submitted 24 indexed (dual matched) libraries for sequencing. The indexes are:
+We submitted 24 indexed (dual matched means that the indexes will match on both sides, if A1 on one side must be A1 on the other) libraries for sequencing. The indexes are:
 
 ```
 B1	GTAGCGTA    A5	CGATCGAT    C1	GATCAAGG
@@ -16,7 +16,7 @@ A12	TCGACAAG    C10	TCTTCGAC    A2	ATCATGCG
 C2	ATCGTGGT    A10	TCGAGAGT    B8	TCGGATTC
 A7	GATCTTGC    B10	AGAGTCCA    A8	AGGATAGC
 ```
-You can find a txt file containing these indexes on Talapas.
+You can find a txt file containing these indexes on Talapas. #read the tab seperated text file and do something
 
 4 FASTQ files are: 
 ```bash
@@ -29,22 +29,23 @@ in ```/projects/bgmp/shared/2017_sequencing/```. DO NOT copy or unzip these data
 
 Please fill in your answers on [Answers.md](Answers.md)
 
-## Part 1 – Quality Score Distribution per-nucleotide
-1.	Perform some initial data exploration! Record any bash commands you used inside a lab notebook (submit to this repo!).
-    1. Determine which files contain the indexes, and which contain the paired end reads containing the biological data of interest. Create a table and label each file with either read1, read2, index1, or index2.
-    2. Determine the length of the reads in each file.
-    3. Determine the phred encoding for these data.
-2.	Generate a per base distribution of quality scores for read1, read2, index1, and index2. Average the quality scores at each position for all reads and generate a per nucleotide mean distribution **as you did in part 1 of PS4 in Bi621**. (NOTE! Do NOT use the 2D array strategy from PS9 - you WILL run out of memory!)
+## Part 1 – Quality Score Distribution per-nucleotide (mean qscore y axis, nt position x axis, will have 4 of these plots)
+1.	Perform some initial data exploration! Record any bash commands you used inside a **lab notebook (submit to this repo!).**
+    1. Determine which files contain the indexes, and which contain the paired end reads containing the biological data of interest. Create a table and label each file with either read1, read2, index1, or index2. **(ls -lah)**
+    2. Determine the length of the reads in each file. **ALL FILES HAVE 1452986940 LINES**
+    4. Determine the phred encoding for these data.
+2.	Generate a per base distribution of quality scores for read1, read2, index1, and index2 ( **ARG PARSE**). Average the quality scores at each position for all reads and generate a per nucleotide mean distribution **as you did in part 1 of PS4 in Bi621**. (NOTE! Do NOT use the 2D array strategy from PS9 - you WILL run out of memory!) **1d array how many positions are in the read**
     1.	Turn in the 4 histograms.
-    2.	What is a good quality score cutoff for index reads and biological read pairs to utilize for sample identification and downstream analysis, respectively? Justify your answer.
+    2.	What is a good quality score cutoff for index reads and biological read pairs to utilize for sample identification and downstream analysis (**RNA-SEQ experiment**), respectively? Justify your answer.
     3.	How many indexes have undetermined (N) base calls? (Utilize your command line tool knowledge. Submit the command(s) you used. CHALLENGE: use a one-line command)
 
 ## Part 2 – Develop an algorithm to de-multiplex the samples
 Write up a strategy (**NOT A SCRIPT**) for writing an algorithm to de-multiplex files and reporting index-hopping. That is, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplex reads by index-pair, outputting:
 
 - one R1 FASTQ file and one R2 FASTQ file **per** matching index-pair, 
-- another two FASTQ files for non-matching index-pairs (index-hopping), and 
-- two additional FASTQ files when one or both index reads are unknown or low quality (do not match the 24 known indexes [this includes indexes with 'N's in them] or do not meet a quality score cutoff)
+- another two FASTQ files for non-matching index-pairs (index-hopping) (**hopped_R1.fq, hopped_R2.fq**), and 
+- two additional FASTQ files when one or both index reads are unknown or low quality (do not match the 24 known indexes [this includes indexes with 'N's in them] or do not meet a quality score cutoff) (**unk_R1.fq,unk_R2.fq**)
+
     
 Add the sequence of the index-pair to the header of BOTH reads in all of your FASTQ files for all categories (e.g. add “AAAAAAAA-CCCCCCCC” to the end of headers of every read pair that had an index1 of AAAAAAAA and an index2 of CCCCCCCC; this pair of reads would be in the unknown category as one or both of these indexes do not match the 24 known indexes).
 
@@ -59,8 +60,8 @@ You should strive to report values for each possible pair of indexes (both swapp
 - Define the problem
 - Determine/describe what output would be informative
 - Write examples (unit tests!):
-    - Include four properly formatted input FASTQ files with read pairs that cover all three categories (dual matched, index-hopped, unknown index)
-    - Include the appropriate number of properly formatted output FASTQ files given your input files
+    - Include four properly formatted input FASTQ files with read pairs that cover all three categories (dual matched, index-hopped, unknown index) (need 3 minimum reads : one for dual-matched, one for index-hopped and one for unknown index : I'm gonna do 9 mayhaps)
+    - Include the appropriate number of properly formatted output FASTQ files given your input files (should be 6 for 3 minimum : 1 pair each for each read above )
 - Develop your algorithm using pseudocode
 - Determine high level functions
     - Function headers (name and parameters)
