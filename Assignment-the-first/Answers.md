@@ -37,7 +37,7 @@ We are given 4 files: R1, R2, R3 and R4. R1 and R4 are read files, while R2 is t
     3. Test examples for individual functions
     4. Return statement
 
-```
+```python
 def rev_complement(sequence: str) -> str:
     '''Takes a DNA sequence and for each base in the sequence, we complement it with the associated base i.e, A>T, G>C, C>G, T>A. We then reverse the
 sequence ('hello world'[::-1]) to output finally the reverse complement'''
@@ -46,7 +46,7 @@ Input: ATTGC
 Expected output: GCAAT
 ```
 
-```
+```python
 def calc_quality_score(record: list) -> int:
     '''Takes a DNA sequence and for each base in the sequence, we complement it with the associated base i.e, A>T, G>C, C>G, T>A. We then reverse the
 sequence ('hello world'[::-1]) to output finally the reverse complement'''
