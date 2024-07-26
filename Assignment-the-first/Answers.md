@@ -30,9 +30,27 @@ We are given 4 files: R1, R2, R3 and R4. R1 and R4 are read files, while R2 is t
    
 3. Upload your [4 input FASTQ files](../TEST-input_FASTQ) and your [>=6 expected output FASTQ files](../TEST-output_FASTQ).
 4. Pseudocode
-   
+   ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/pseudocode.png?raw=true)
 5. High level functions. For each function, be sure to include:
     1. Description/doc string
     2. Function headers (name and parameters)
     3. Test examples for individual functions
     4. Return statement
+
+```
+def rev_complement(sequence: str) -> str:
+    '''Takes a DNA sequence and for each base in the sequence, we complement it with the associated base i.e, A>T, G>C, C>G, T>A. We then reverse the
+sequence ('hello world'[::-1]) to output finally the reverse complement'''
+    return revcomp
+Input: ATTGC
+Expected output: GCAAT
+```
+
+```
+def calc_quality_score(record: list) -> int:
+    '''Takes a DNA sequence and for each base in the sequence, we complement it with the associated base i.e, A>T, G>C, C>G, T>A. We then reverse the
+sequence ('hello world'[::-1]) to output finally the reverse complement'''
+    return qualscore
+Input: a record in the form of a list with 4 objects, each being every line of the record
+Expected output: a number we can compare to with the thresh hold
+```
