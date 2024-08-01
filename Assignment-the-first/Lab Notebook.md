@@ -120,3 +120,17 @@ AAA7AAFF<JJ<<FAFJJFJFAAAFJJFJJJJAFJJFJJJJFFJJFJFJFFJF<JJ<AFFJ<FAFJJJJJFJ7JJFFFJJ
 ^C
 ```
 
+# Checking for the appropriate threshold:
+
+```
+zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | head -1000000 | tail -40
+
+@K00337:83:HJKJNBBXX:8:1101:8653:4884 2:N:0:1
+TCTTCGAC
++
+AAA-<<A<
+```
+
+Need to do extra stuff for the qual_score thing
+
+zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | grep -A 2 -B 1 "TCTTCGAC" | head -40
