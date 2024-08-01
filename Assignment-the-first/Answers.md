@@ -1,7 +1,7 @@
 # Assignment the First
 
 ## Part 1
-1. Be sure to upload your Python script. Provide a link to it here:
+1. Be sure to upload your Python script. Provide a link to it here: [histogram.py](histogram.py)
 
 | File name | label | Read length | Phred encoding |
 |---|---|---|---|
@@ -12,8 +12,25 @@
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
-    2. **YOUR ANSWER HERE**
-    3. **YOUR ANSWER HERE**
+    ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/R1_hist.png)
+    ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/R2_hist.png)
+    ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/R3_hist.png)
+    ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/R4_hist.png)
+
+3.  1. Determine the length of the reads in each file. **ALL FILES HAVE 1452986940 LINES**
+    2. Determine the phred encoding for these data. **PHRED +33 because it contains symbols!**
+
+    3.	What is a good quality score cutoff for index reads and biological read pairs to utilize for sample identification and downstream analysis (**RNA-SEQ experiment**), respectively? Justify your answer.
+
+    For sample identification using indexes: we can use a quality score cut-off of 30, because the average of values for each position of the index is always above 30
+
+    For downstream analysis using : we can use a quality score cut-off of 30, because the average of values for each position of the index is always above 30
+
+
+    3.	How many indexes have undetermined (N) base calls? 
+    for R2 (index 1): 3976613
+    for R3 (index 2):3328051
+
     
 ## Part 2
 1. Define the problem
@@ -48,9 +65,8 @@ Expected output: GCAAT
 
 ```python
 def calc_quality_score(record: list) -> int:
-    '''Takes a DNA sequence and for each base in the sequence, we complement it with the associated base i.e, A>T, G>C, C>G, T>A. We then reverse the
-sequence ('hello world'[::-1]) to output finally the reverse complement'''
-    return qualscore
-Input: a record in the form of a list with 4 objects, each being every line of the record
-Expected output: a number we can compare to with the thresh hold
+    '''we call convert_phred from bioinfo.py and calculate the quality score, check if quality good or not'''
+    return True or False
+Input: a record in the form of a list with 4 objects?, each being every line of the record
+Expected output: A boolean value of True if the quality is good and False if the quality is bad.
 ```
