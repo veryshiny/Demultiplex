@@ -1,7 +1,8 @@
 # Assignment the First
 
 ## Part 1
-1. Be sure to upload your Python script. Provide a link to it here: [histogram.py](histogram.py)
+1. Link to python script: [histogram.py](histogram.py)
+
 
 | File name | label | Read length | Phred encoding |
 |---|---|---|---|
@@ -11,15 +12,12 @@
 | 1294_S1_L008_R4_001.fastq.gz | read 2 | 101 | phred +33  |
 
 2. Per-base NT distribution
-    1. Use markdown to insert your 4 histograms here.
     ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/R1_hist.png)
     ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/R2_hist.png)
     ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/R3_hist.png)
     ![](https://github.com/veryshiny/Demultiplex/blob/master/Assignment-the-first/R4_hist.png)
 
-3.  1. Determine the length of the reads in each file. **ALL FILES HAVE 1452986940 LINES**
-    2. Determine the phred encoding for these data. **PHRED +33 because it contains symbols!**
-
+3.  
     3.	What is a good quality score cutoff for index reads and biological read pairs to utilize for sample identification and downstream analysis (**RNA-SEQ experiment**), respectively? Justify your answer.
 
     Illumina sequencing uses bins for their PHRED scores to minimize the data used. So each bin has 3 PHRED score values rounded down to the nearest multiple of 3. For eg, 28 would be 27, 4 would be 3, etc.
