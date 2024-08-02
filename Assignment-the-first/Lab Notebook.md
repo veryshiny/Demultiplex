@@ -132,14 +132,10 @@ TCTTCGAC
 AAA-<<A<
 ```
 
-Need to do extra stuff for the qual_score thing to check for the final code
-
-```
-zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | grep -A 2 -B 1 "TCTTCGAC" | head -40
-```
 
 Wrote slurm script to calculate the number of Ns
 ```
 zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l > number_of_N_R2.txt
 zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l  > number_of_N_R3.txt
 ```
+
