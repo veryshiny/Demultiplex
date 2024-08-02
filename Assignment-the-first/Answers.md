@@ -22,9 +22,9 @@
 
     Illumina sequencing uses bins for their PHRED scores to minimize the data used. So each bin has 3 PHRED score values rounded down to the nearest multiple of 3. For eg, 28 would be 27, 4 would be 3, etc.
 
-    For sample identification using indexes: we used a quality score cut-off of 26. The average of values for each position of the index is mostly around 30. We choose the bin right below this so that we provide some leeway for the scores, while still maintaining a good quality for most of the positions.
+    For sample identification using indexes: we used a average quality score cut-off of 26 for all 8 positions on the index. The average of values for each position of the index is mostly around 30. We choose the bin right below this so that we provide some leeway for the scores, while still maintaining a good quality for most of the positions. We also did not want to go through and check every position of the index when the files were so large, as it would increase the processing time to demultiplex.
 
-    For downstream analysis using : we can use a quality score cut-off of 30, because the average of values for each position of the index is always above 30. We can afford to make this threshold more stringent or not, depending on the nature of our analyses.
+    For downstream analysis using : we can use an average quality score cut-off of 30, because the average of values for each position of the index is always above 30. We can afford to make this threshold more stringent or not, depending on the nature of our analyses.
 
 
     3.	How many indexes have undetermined (N) base calls? 
