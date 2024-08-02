@@ -22,9 +22,11 @@
 
     3.	What is a good quality score cutoff for index reads and biological read pairs to utilize for sample identification and downstream analysis (**RNA-SEQ experiment**), respectively? Justify your answer.
 
-    For sample identification using indexes: we can use a quality score cut-off of 30, because the average of values for each position of the index is always above 30
+    Illumina sequencing uses bins for their PHRED scores to minimize the data used. So each bin has 3 PHRED score values rounded down to the nearest multiple of 3. For eg, 28 would be 27, 4 would be 3, etc.
 
-    For downstream analysis using : we can use a quality score cut-off of 30, because the average of values for each position of the index is always above 30
+    For sample identification using indexes: we used a quality score cut-off of 26. The average of values for each position of the index is mostly around 30. We choose the bin right below this so that we provide some leeway for the scores, while still maintaining a good quality for most of the positions.
+
+    For downstream analysis using : we can use a quality score cut-off of 30, because the average of values for each position of the index is always above 30. We can afford to make this threshold more stringent or not, depending on the nature of our analyses.
 
 
     3.	How many indexes have undetermined (N) base calls? 
@@ -63,10 +65,4 @@ Input: ATTGC
 Expected output: GCAAT
 ```
 
-```python
-def calc_quality_score(record: list) -> int:
-    '''we call convert_phred from bioinfo.py and calculate the quality score, check if quality good or not'''
-    return True or False
-Input: a record in the form of a list with 4 objects?, each being every line of the record
-Expected output: A boolean value of True if the quality is good and False if the quality is bad.
-```
+I also used bioinfo.py functions such as qual_score!
