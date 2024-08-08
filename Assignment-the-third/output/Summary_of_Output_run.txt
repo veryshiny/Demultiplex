@@ -1,0 +1,48 @@
+                         Report of Demultiplexing Run
+
+The overall table which tells us the number of each index pair appearances and their % appearance overall (rounded to 3 decimals) is in the file called index_pair_info.txt in the output folder 
+There are 5 plots in the output folder: 
+  1) Overall Distribution Piechart:	Overall_distribution.png
+  2) Distribution of Matched Reads:	matched_distribution.png
+  3) Distribution of Individual Indexes which Hopped:	hopped_index_global_distribution.png
+  4) Top 20 Index-Pairs which hopped:	hopped20_index_pair_distribution.png
+  5) Heatmap of Number of Appearance of each Read:	heatmap_index_pair_distribution.png
+
+                         Overall Statistics
+
+Total number of reads = 363246735
+Total number of samples = 24
+
+Overall matched samples % = 88.591
+Overall unknown samples % = 11.245
+Overall Index-Hopping % = 0.164
+
+Index which was matched the most is TACCGGAT and it appears 20.33 % overall and is 22.948% of the matched reads 
+Index which hopped the most is TATGGCAC and it appears 0.057 % overall and is 34.79% of the hopped reads
+
+                        Percentage of each matched sample
+
+% of reads from Sample TACCGGAT = 20.33% 
+% of reads from Sample TCTTCGAC = 11.304% 
+% of reads from Sample CTCTGGAT = 9.325% 
+% of reads from Sample CTAGCTCA = 4.641% 
+% of reads from Sample TGTTCCGT = 4.234% 
+% of reads from Sample TCGAGAGT = 3.122% 
+% of reads from Sample AGAGTCCA = 3.017% 
+% of reads from Sample TATGGCAC = 2.979% 
+% of reads from Sample TAGCCATG = 2.845% 
+% of reads from Sample ATCATGCG = 2.688% 
+% of reads from Sample AACAGCGA = 2.367% 
+% of reads from Sample GTCCTAAG = 2.359% 
+% of reads from Sample AGGATAGC = 2.323% 
+% of reads from Sample GTAGCGTA = 2.164% 
+% of reads from Sample ACGATCAG = 2.136% 
+% of reads from Sample GCTACTCT = 1.955% 
+% of reads from Sample ATCGTGGT = 1.845% 
+% of reads from Sample GATCAAGG = 1.762% 
+% of reads from Sample CGATCGAT = 1.503% 
+% of reads from Sample CGGTAATC = 1.332% 
+% of reads from Sample TCGGATTC = 1.223% 
+% of reads from Sample CACTTCAC = 1.124% 
+% of reads from Sample TCGACAAG = 1.029% 
+% of reads from Sample GATCTTGC = 0.981% 
